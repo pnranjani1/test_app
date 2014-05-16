@@ -1,0 +1,17 @@
+<aside class=" span5 pap">
+	<h1>Your previous bills</h1>
+	
+    
+<%= render 'shared/feed'%>
+</aside>
+<div class=" span3 pap ">
+	<h3>Download all your bills</h3>
+	<i class="icon-download-alt"></i> <%= link_to 'Download CSV ', microposts_path( :format => :csv),:class => "btn"  %></br></br>
+	<i class="icon-download"></i> <%= link_to 'Download XLS ', microposts_path( :format => :xls),:class => "btn "  %>
+	<h3>Download Tally importable xml file </h3>
+	<%= form_tag  microposts_path( :format => :xml),method: "get" do  %>
+	<%= label_tag(:start_date , 'From : ')%> <%= text_field_tag( :start_date,params[:start_date])%>
+	<%= label_tag(:end_date , 'To : ')%> <%= text_field_tag( :end_date,params[:end_date])%>
+	<%= submit_tag("Tally importable xml",:class => "btn")%>
+	<% end %>
+</div>

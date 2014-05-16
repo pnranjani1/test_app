@@ -1,0 +1,2 @@
+$("#taxup-form").html("<%= escape_javascript( render( 'shared/tax_edit',:locals => {:tax => @tax }))%>");
+$("#taxup-form").dialog("open");

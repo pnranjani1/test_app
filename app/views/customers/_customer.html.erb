@@ -1,0 +1,10 @@
+<li>
+	
+	<%= gravatar_for customer , size: 52 %>
+	
+	<%= link_to customer.name, customer %>
+	| 
+	| <%= link_to "edit", edit_customer_path(customer.id) %>
+	
+	
+</li>

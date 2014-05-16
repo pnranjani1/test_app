@@ -1,0 +1,8 @@
+<li>
+<h3><%= product.name %></h3>
+<h4><%= product.description %></h4>	
+<h4>Unit : <%= product.unit %> </h4>
+<h4>Code : <%= product.code %> </h4>
+	| 
+	| <%= link_to "edit", edit_product_path(product.id) %>  |
+</li>

@@ -1,0 +1,40 @@
+<% if signed_in? %>
+	<div class="row" >
+		<aside class="span12" >
+			
+			
+			<div class = "box">
+			<h3 class="center"> Create A New Bill</h3>
+			<section>
+				<%= render 'shared/bill' %>
+			</section>
+			</div>
+			<section class="pap topper">
+				<div class="nopper"><%= render 'shared/user_info' %></div>
+				<div class="righter"><button class = "help btn " id="pro-butt"> add product </button></div>
+				<div class="righter"><button id = "add_customer" class="btn">Add a new customer </button></div>
+			</section>
+		</aside>
+	
+	</div>
+	<% else %>
+	<div class="center hero-unit">
+	 <h1>Welcome to  Onwebaccount.in</h1>
+	 <iframe width="560" height="315" src="//www.youtube.com/embed/MyxcBQmMCfY" frameborder="0" allowfullscreen></iframe>
+    <h2>
+      WE make billing easy
+    </h2>
+    <%= link_to "Sign up now !", signup_path,class: "btn btn-large btn-primary"%>
+ 
+</div>
+<h4>Powered by</h4>  <%= link_to image_tag("rails.png",alt: "Rails"),"http://rubyonrails.org" , target:"_blank"%>
+<% end %>
+
+
+<script>
+    jQuery(document).ready(function() {
+        $("input.date_picker").datepicker();
+
+    });
+
+</script>

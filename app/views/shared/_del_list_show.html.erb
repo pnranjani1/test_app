@@ -1,0 +1,31 @@
+<span class="floatlb"><h4> Product name  </h4></span>
+<span class="floatl"><h4> Quantity  </h4></span>
+<span class="floatl"><h4> Unit Price  </h4></span>
+<span class="floatla"><h4> Amount  </h4></span> 
+<% @total = 0 %>
+<% @tax = 0%>
+<% @sur_tax = 0 %>
+
+<% @taxis = Tax.find(@info.tax_id) %>
+<% if @del_items.any? %>
+	<ol class="micropostsed">
+		<%= render partial: 'shared/del_item_show.html.erb', collection: @del_items %>
+	</ol>
+	<h4> Total = <%= @total %> </h4>
+	<% if @info.sur_name != "" && @info.sur_tax != nil %>
+	<h4> <%= @info.sur_name %> = <%= @info.sur_tax.to_s %> </h4>
+	<%@total += @info.sur_tax %>
+	<% end %>
+	<% @tax = (@total * @taxis.rate * 0.01).round(2) %>
+	<h4> <%= @taxis.state%> @ <%= @taxis.rate.to_s %> %  on <%= @total %> = <%= @tax %></h4>
+	<h4> Grand total = <%= @total+@tax %></h4>
+	<h4> Other information = <%= @info.gen_info %></h4>
+	
+<%= link_to 'Create PDF ', micropost_path(@micropost, :format => :pdf),:target => "_blank" ,:class=>"btn" %>
+<%= link_to "tally xml",micropost_path(@micropost,:format => :xml),{:class=>"btn"} %>
+<% if @bill.esugam == nil %>
+<%= link_to "Generate e-sugam",micropost_path(@micropost, :cause => "esn"),{:class=>"btn",:id=>"spinneret", confirm: "IF you want to cancel the esugam number you will have to do it in the vat website within 48 hours . Do you want to continue ?"} %> 
+<% end %>
+<% end %>
+<div id="spinme"></div>
+<div id=messpin><h4>please wait for the esugam number to be generated , thank you , this can take upto a minute !</h4> </div>

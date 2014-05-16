@@ -1,0 +1,21 @@
+<% provide(:title, current_user.name) %>
+<% if @customer.email != "" or @customer.email != nil %>
+<%= link_to gravatar_for(@customer),'https://en.gravatar.com/',{:target => '_blank'} %>
+<% end %>
+	<span class="user">
+		<h4><%= link_to @customer.user.name,@customer.user%></h4>
+	</span>
+	<span class="content"><h4><%= link_to @customer.name, @customer %></h4>
+		<h4>TIN :<%= @customer.tin%></h4>
+		<h4>Phone:<%= @customer.phone%></h4>
+		<h4>Address:<%= @customer.address%></h4>
+		<h4>City:<%= @customer.city %></h4>
+		<% if @customer.email != "" or @customer.email != nil %>
+		<h4>Email:<%= @customer.email%></h4>
+		<% end %>
+	</span>
+	<span class="timestamp">
+		Posted <%= time_ago_in_words(@customer.created_at )%> ago.
+	</span>
+	<%= link_to "delete",@customer,method: :delete,data: { confirm: "You sure?" }  %>
+	<%= link_to "edit", edit_customer_path %>

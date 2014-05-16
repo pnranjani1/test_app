@@ -1,0 +1,7 @@
+
+<%= semantic_form_for @customer, :remote=>true ,:html => {:id => "coc"}  do |f|  %>
+<%= f.inputs :name, :tin, :phone ,:address,:city,:email, :name => "Customer" %>
+<%= f.action  :submit, :button_html => {:class => "btn"}%>
+
+<% end%>
+

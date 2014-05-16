@@ -1,0 +1,6 @@
+<div class="fields">
+  <%= f.input :product_id, :as => :select, :collection =>Hash[current_user.products.all.map{ |p| [p.name+ " -- " +p.description+ " -- " + p.code,p.id]}] ,:name => "items",:include_blank => false %>
+  <%= f.input :quantity  %>
+  <%= f.input :unit_price %>
+  <%= link_to_remove_fields "remove", f %>
+</div>

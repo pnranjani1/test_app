@@ -1,0 +1,5 @@
+<%= semantic_form_for @tax, :remote=>true , :html => {:id => 'tc' } do |f| %>
+	<%= f.input :state,:as => :radio,:collection => ["VAT","CST"], :name => "tax"  %>
+	<%= f.input :rate , :input_html => {:title => 'just the rate , no need for a percentage symbol '}%>
+	<%= f.action :submit,:button_html => { :class => "btn btn-small"} %>
+	<% end %>

@@ -1,0 +1,54 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+<div class="navbar-inner">
+		<div class="container">
+			<%= link_to "Onwebaccount.in",root_path,id: "logo" %>
+			<nav>
+				<ul class = "nav pull-right">
+					<li data-no-turbolink><%= link_to "Home/Make A Bill",    root_path %></li>
+					<li><%= link_to "Help",    help_path %></li>
+					<li><%= link_to "Testimonials/Blog","http://blog.onwebaccount.in/testimonials/" %></li>
+					<% if signed_in? %>
+					    
+					    <li id="fat-menu" class="dropdown">
+					    	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Your Data <b class="caret"></b>
+					    		</a>
+					    		<ul class="dropdown-menu">
+					    			<li><%= link_to "Customers", customers_path %></li>
+					    			<li><%= link_to "Add a Customer", new_customer_path %></li>
+					    			<li class="divider"></li>
+					    			<li><%= link_to "products", products_path %></li>
+					    			<li><%= link_to "Add a Product", new_product_path %></li>
+					    			<li class="divider"></li>
+					    			<li><%= link_to "previous bills", microposts_path %></li>
+					    			<li><%= link_to "Profile (commodities and taxes also)", current_user %></li>
+					    			<li><%= link_to "Settings", edit_user_path(current_user) %></li>
+					    			<li><%= link_to "my Logo ","http://gravatar.com/emails" ,:target =>'_blank'%>
+					    			<% if current_user.admin? %>
+					    			<li class="divider"></li>
+					    			<li><%= link_to "other users", users_path %></li>
+					    			<% end %>
+					    				</ul>
+					    				</li>
+					    				
+					    				
+					
+					    <li id="fat-menu" class="dropdown">
+					    	<a href="#" class="dropdown-toggle" data-toggle="dropdown">You <b class="caret"></b>
+					    		</a>
+					    		<ul class="dropdown-menu">
+					    			
+					    			
+					    		
+					    			<li><%= link_to "Sign out", signout_path, method:"delete"%>
+					    				</li>
+					    				</ul>
+					    				</li>
+					    				<% else %>
+					    				<li><%= link_to "Sign in", signin_path %></li>
+					    				<% end %>
+					
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>

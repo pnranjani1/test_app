@@ -1,0 +1,4 @@
+
+$('#fc')[0].reset();
+$("#deliver-list").html("<%= escape_javascript( render(  'shared/deliverable_list' ,:locals => {:del_items => @del_items } ))%>");
+$("#refresh-hold").show();

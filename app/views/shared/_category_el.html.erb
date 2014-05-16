@@ -1,0 +1,11 @@
+<li id="<%= category_el.id %>">
+
+	<span class="user">
+	<h5> Commodity Name :<%= category_el.name %></h5>	
+	<h5>Commodity code :	<%= category_el.code %></h5>
+	<p>
+		
+	</p>
+	<p><%= link_to "edit",edit_category_path(category_el),:remote => true %> </p>
+	</span>
+</li>

@@ -1,0 +1,30 @@
+<div id="error-holder"></div>
+
+<div class="appear">
+	<div id ="cust-form">
+	<%= render 'shared/customer_formtastic'%>
+	</div>
+	<div id="flr"><button id = "hide_customer" class="btn">Hide </button></div>
+	
+	
+</div>
+
+<div id="bill-form">
+  <%= simple_form_for @micropost ,:html => {:class => "form-inline"} do |f| %>
+      <%= f.input :invoice_number %>
+      <%= f.input :bill_date,as: :date_picker%>
+      <%= f.input :customer, :as => :select,:collection =>Hash[current_user.customers.all.map{ |p| [p.name+ " -- " + p.tin ,p.id] }] ,:include_blank => false %>
+      <%= f.simple_fields_for :deliverables do |d| %>
+          <%= render 'shared/deliverable_fields', :f => d %>
+
+      <% end %>
+      <p><%= link_to_add_fields "Add products", f, :deliverables %></p>
+
+
+      <%= f.submit :label => "continue", :button_html => { :class => "btn" } %>
+
+  <% end %>
+
+  </br>
+
+</div>

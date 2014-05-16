@@ -1,0 +1,14 @@
+
+$("#coc")[0].reset();
+$("#bill-form").html("<%= escape_javascript( render(  'shared/micropost_formtastic' ,:locals => {:micropost => @micropost } ))%>");
+$("#cust-form").html("<%= escape_javascript( render(  'shared/customer_formtastic' ,:locals => {:customer => @customer } ))%>");
+$(".appear").hide();
+$('.datePicker').datepicker({
+ 	dateFormat: "yy-mm-dd"
+
+ });
+ $("#add_customer").click(function(){
+		if($(".appear").is(":hidden")){
+		$(".appear").show("blind");}
+	});
+

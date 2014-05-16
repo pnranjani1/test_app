@@ -1,0 +1,2 @@
+$("#produp-form").html("<%= escape_javascript( render( 'shared/product_entry',:locals => {:product => @product }))%>");
+$("#produp-form").dialog("open");

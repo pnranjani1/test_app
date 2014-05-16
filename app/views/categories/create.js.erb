@@ -1,0 +1,4 @@
+
+$(".tryout").html("<%= escape_javascript( render(  'shared/cat_list' ,:locals => {:cat_feed_list => @cat_feed_list }))%>");
+$('#cc')[0].reset();
+$(".dialog-form").dialog('close');

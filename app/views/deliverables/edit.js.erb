@@ -1,0 +1,3 @@
+
+$("#popup-form").html("<%= escape_javascript( render( 'shared/deliverable_formtastic',:locals => {:deliverable => @deliverable }))%>");
+$("#popup-form").dialog("open");

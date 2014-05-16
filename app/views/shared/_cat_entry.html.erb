@@ -1,0 +1,6 @@
+<p>Please enter both name and code for the commodity</p>
+	<%= semantic_form_for @category, :remote=>true , :html => {:id => 'cc' } do |f| %>
+	<%= f.inputs :name,:code, :name => "commodity"  ,:class =>"form-input" ,:input_html => {:title => 'ensure both name and code are identical to that in the ESugam website '}%>
+	
+	<%= f.action :submit,:button_html => { :class => "btn btn-small"} %>
+	<% end %>

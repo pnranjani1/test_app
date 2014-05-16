@@ -1,0 +1,33 @@
+<% if @user.id == nil %>
+<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+<% else %>
+<% provide(:title, "Update user Details ")%>
+<h1> Update your profile </h1>
+<%= gravatar_for @user %>	
+		<a href="http://gravatar.com/emails" target ='_blank'>change</a>
+<% end %>
+<div class="row">
+	<div class="span6 offset3 pap">
+		<%=semantic_form_for @user do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+		
+			<%= f.inputs :name,:email,:password,:password_confirmation %>
+			<%= f.input :esugam_id,:label => "Esugam user name"%>
+			<%= f.inputs :esugam_pwd,:tin,:address,:city,:phone,:bank_acc_no,:ifscode %>
+			<%= f.action :submit, :button_html => { :class => "btn " } %>
+			
+			
+		<% end %>
+			
+	</div>
+	
+</div>
+
+
+
+		
+		
+		
+		
+<p>Find me in app/views/users/new.html.erb</p>

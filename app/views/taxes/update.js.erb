@@ -1,0 +1,4 @@
+$("#taxout").html("<%= escape_javascript( render(  'shared/tax_list' ,:locals => {:tax_feed_list => @tax_feed_list }))%>");
+$("#taxup-form").empty();
+$("#taxup-form").dialog("close");
+$("#tc")[0].reset();

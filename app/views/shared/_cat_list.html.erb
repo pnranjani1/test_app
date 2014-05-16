@@ -1,0 +1,9 @@
+
+<h4 class="center"> Commodities  </h4>
+<% if @cat_feed_list.any? %>
+
+<ol class="microposts">
+	<%= render partial: 'shared/category_el', collection: @cat_feed_list %>
+</ol>
+
+<% end %>

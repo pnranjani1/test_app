@@ -1,0 +1,2 @@
+$("#catup-form").html("<%= escape_javascript( render( 'shared/cat_edit',:locals => {:category => @category }))%>");
+$("#catup-form").dialog("open");

@@ -1,0 +1,8 @@
+
+$("#bill-data").html("<%= escape_javascript( render(  'shared/bill_data' ,:locals => {:bill => @bill } ))%>");
+$("#bill-form").hide();
+$("#bill-bid").show();
+$("#deliver-list").show();
+$("#deliver-holder").show();
+$("#pro-butt").show();
+$("#add_customer").hide();

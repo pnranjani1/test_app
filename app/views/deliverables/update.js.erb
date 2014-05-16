@@ -1,0 +1,7 @@
+
+
+$("#deliver-list").html("<%= escape_javascript( render(  'shared/deliverable_list' ,:locals => {:del_items => @del_items } ))%>");
+$("#deliver-list").show();
+$("#popup-form").empty();
+$("#popup-form").dialog("close");
+$("#fc")[0].reset();

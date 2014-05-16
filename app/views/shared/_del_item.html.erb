@@ -1,0 +1,15 @@
+<% @curr_product= current_user.products.find(del_item.product_id)%>
+<li id="<%= del_item.id%> ">
+	<% @deliverable = Deliverable.find(del_item.id)%>
+	<span class="content">
+		<span class="floatlb"><h4><%= @curr_product.name %></h4></span>
+<span class="floatl"><h4><%= @deliverable.unit_price %> </h4></span>
+<span class="floatl"><h4><%= del_item.quantity %> </h4></span>
+<span class="floatla"><h4> <%= del_item.del_price%> </h4></span> 
+<%= link_to "edit" ,edit_deliverable_path(@deliverable),:remote => true %>
+		
+		
+</li>	
+<% @total = @total + del_item.del_price %>
+
+

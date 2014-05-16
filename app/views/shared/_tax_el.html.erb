@@ -1,0 +1,11 @@
+<li id="<%= tax_el.id %>">
+
+	<span class="user">
+	<h5> Tax Type  : <%= tax_el.state %></h5>	
+	<h5>Tax Rate :	<%= tax_el.rate %> %</h5>
+	<p>
+		
+	</p>
+	<p><%= link_to "edit",edit_tax_path(tax_el),:remote => true %> </p>
+	</span>
+</li>

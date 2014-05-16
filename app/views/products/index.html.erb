@@ -1,0 +1,16 @@
+<% provide(:title, "Your products" )%>
+<div class="pap">
+<h1>Your Products</h1>
+<%= link_to 'Add a Product',new_product_path%>
+<%= will_paginate %>
+<ul class="users">
+	
+	
+      <%= render @products%>
+    
+
+	
+</ul>
+<%= will_paginate %>
+<div id="produp-form"></div>
+</div>

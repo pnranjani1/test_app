@@ -1,0 +1,8 @@
+<h4 class="center"> Taxes  </h4>
+<% if @tax_feed_list.any? %>
+
+<ol class="microposts">
+	<%= render partial: 'shared/tax_el', collection: @tax_feed_list %>
+</ol>
+
+<% end %>

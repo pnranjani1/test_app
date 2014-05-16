@@ -1,0 +1,54 @@
+<% provide(:title, @user.name) %>
+<div class= "row">
+	<aside class="span6 pap ">
+		<section>	
+
+<%= gravatar_for @user%>
+
+<div id= "sub_details">
+	<h3 class="center">Your Details </h3></br>
+	<h4>Name :<%= @user.name %></h4>
+	<h4>Email :<%= @user.email %></h4>
+	<h4>Address :<%= @user.address%></h4>
+	<h4>City : <%= @user.city %></h4>
+	<h4>Esugam_id :<%= @user.esugam_id %></h4>
+	<h4>Tin : <%= @user.tin %></h4>
+	<h4>Phone: <%= @user.phone %></h4>
+	<h4>Bank Account Number: <%= @user.bank_acc_no %></h4>
+	<h4>IFSC code : <%= @user.ifscode %></h4>
+	
+	 
+	
+	<p> If you want to change any of the details ,or your passwords <%= link_to "Click here", edit_user_path(current_user) %></p> 
+	<p> Please add or edit the commodity categories  and taxes below , enter at least one before proceeding to avoid errors </p>
+	
+	<button class= "help btn"> add commodity</button>
+	<button class= "taxup btn">add tax</button> 
+	<br />	
+	<div class="tryout span3"><%= render 'shared/cat_list'%></div>
+	<div class=  "span2" id="taxout"><%= render 'shared/tax_list'%></div>		
+	
+		
+		
+	</div>
+<div id="catup-form"></div>
+<div id="taxup-form"></div>
+</section>
+<script> 
+	
+</script>
+
+</aside>
+<div class="dialog-form">
+	<%= render 'shared/cat_entry' %>
+</div>
+<div class="taxog-form">
+	<%= render 'shared/tax_entry' %>
+</div>
+<div class="span3 pap">
+	<%= render 'shared/feed'%>
+</div>
+
+
+</div>
+</div>

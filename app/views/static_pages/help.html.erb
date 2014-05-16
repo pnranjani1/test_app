@@ -1,0 +1,59 @@
+<% provide(:title,"Help")%>
+
+<h1>Help</h1>
+<div class="pap">
+    <h3>Welcome to Onwebaccount.in the following questions and answers should answer all your questions </h3>
+    <ul>
+    	<li><h4> Why use onwebaccount.in ?</h4>
+    <h4>  The answer in one word is Convenience . Our website lets dealers create sale bills/invoices , when that is done with a click of the button they can generate an E-sugam no. We are also compatible with Tally ERP 9 . So a dealer can import all the sales bill generated into Tally ERP 9. Not to mention we give the dealers a nice printable pdf   </h4>
+    </li>
+    <li><h4> How do i register ?</h4>
+    <h4> When you first visit our website you will see a big blue sign up button. Clicking that will take you to our sign up page .  </h4>
+    <%= image_tag("Sign up.JPG",:alt=> "sign up page")  %>
+    <h4>Now all you have to do is fill in the form . While you might think we are asking for a lot of details . Rest asured they are all needed . Some are needed for generating Esugam numbers (like your Esugam username and password) others are to help make your Invoice PDF better (your IFSC code , bank account number )
+    	</h4>
+    <%= image_tag("suf.JPG",:alt=> "sign up form")  %>	
+    </li>
+    <li><h4>Generating my first bill , entering commodities and taxes</h4>
+    	<h4>Before you generate your first bill .We need you to enter the commodities and commodity code as per the esugam website .
+    		</h4>
+    	<%= image_tag("esugcom.png",:alt=> "esugam commodities ")  %>	
+    	<h4>You do this by visiting your profile page , (if you just signed up it is the first page you see . We do not let you create a bill until you enter atleast one commodity and one tax rate ) . And clicking on the add  commodity or add tax button. Once you fill inh the required details on the popup form it should be reflected below </h>
+    <%= image_tag("cot.JPG",:alt=> "commodities and taxes ")  %>
+    <h4> Now you can make your first bill . Click on Home/Make a bill . Since this is your first bill click on add a new customer , to add your customer .(By default we give you a customer called cash . Why will be explained later )</h4>
+    <%= image_tag("Cust.JPG",:alt=> "new customer in bill ")  %>
+    <h4>Once you fill in the deatils and save the customer you should be able to choose the customers you created in the Customer selection drop down box. Fill in other details like invoice number and click save bill  data. Since this is your first bill the product drop box will be empty . To remedy this just click add product . and fill in the popup form  </h4>
+    <%= image_tag("newp.JPG",:alt=> "new product in bill ")  %>
+    <h4>Now you choose the product .Enter the  quantity and unit price and click Submit Item . . You will now see 2 new things a list of all your items in the bill . And another form asking for  tax rate etc. </h4> 
+    <%= image_tag("samp.JPG",:alt=> "deliverables in bill ")  %>
+    <h4>Once you have added all the items rquired . You choose the tax rate. Add other charges if any . Other charges are Lumpsum charges and not percentage based . You can also enter any other information you want printed in the bill. Click save and Voila you have made your first bill . Click on  Create PDF to get pdf version of your bill . Click on  Generate E sugam to generate your the Esugam number. Clicking on tally XMl will generate an xml file . That can be imported into tally . Products and customers can also be individually added . Options for this can found under the your data tab in the header .</h4>
+    </li>
+    <li><h4>How do i add/change my logo</h4>
+    	<h4>For logo's we use a service called gravatar . It is a service used by many other websites and we have chosen them because of the convenience and reliability they offer . To add change your logo , either click setting and click the change button next to your logo , or click the my logo link in the your data tab . This should take you to the gravatr page where you can sign up and add your logo </h4>
+    </li>
+    <li><h4>What is the cash customer for </h4>
+    	<h4>The cash customer is for when you want make an invoice but do not want to save a customer . When you choose the cash customer no customer details will be reflected anywhere </h4>
+    </li>	
+    <li>
+    	<h4>I dont want to enter a customers tin , what do i do ?</h4>
+    	<h4>Thats simple just create a customer with tim = 0000000000 (eleven zeros, we auto suggest it for convenience ). and his tin will not be presented in the generated pdf 
+    		</h4>
+    </li>
+    <li>
+    	<h4>How do i import my data into tally </h4>
+    	<h4>To generate tally importable xml either go to an individual bill and click generate tally xmlk , or go to previous bills , Choose the start date and end date and click generate tally xml . This will start a download of the tally xml file .	Now open Tally ERP 9 and go the import data option . </h4> 
+    	<%= image_tag("t1.JPG",:alt=> "tally  ")  %>
+    	<h4> Go to vouchers </h4> 
+    	<%= image_tag("t2.JPG",:alt=> "tally 2")%>
+    	<h4> Type the path name to where the downloaded file is (include the .xml extension ) . Press enter and your vouchers should be imported into tally </h4>
+    	
+    	
+    </li>
+    <li>
+    	<h3> For other queries contact Saket at   saketbardia@gmail.com or 8050697228 </h3>
+    </li>
+    
+    </ul>
+    
+  </div>
+    

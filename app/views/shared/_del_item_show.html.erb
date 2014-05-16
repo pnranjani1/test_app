@@ -1,0 +1,12 @@
+<% @curr_product= current_user.products.find(del_item_show.product_id)%>
+<li id="<%= del_item_show.id%> ">
+	<% @deliverable = Deliverable.find(del_item_show.id)%>
+	<span class="content">
+		<span class="floatlb"><h4><%= @curr_product.name %></h4></span>
+<span class="floatl"><h4><%= @deliverable.unit_price %> </h4></span>
+<span class="floatl"><h4><%= del_item_show.quantity %> </h4></span>
+<span class="floatla"><h4> <%= del_item_show.del_price%> </h4></span> 
+		
+	</span>	
+</li>	
+<% @total = @total + del_item_show.del_price %>

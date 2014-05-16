@@ -1,0 +1,15 @@
+<% if @customer.id == nil %>
+<% provide(:title, "Create new customer ") %>
+ <h1>Create a new customer</h1>
+<% else %> 
+<% provide(:title, "Update customer ") %>
+
+ <h1>Update customer</h1>
+ <% end %>
+<div class="pap">
+<%= semantic_form_for @customer   do |f|  %>
+<%= f.inputs :name, :tin, :phone ,:address,:city,:email, :name => "Customer" %>
+<%= f.action :submit, :button_html => {:class => "btn btn-primary"}%>
+<% end%>
+
+</div>
