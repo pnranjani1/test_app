@@ -40,16 +40,16 @@
               <div class="row">
                 <div class="span4"><%= i.input :tax_id, :as => :select,:collection =>Hash[current_user.taxes.all.map{ |t| [t.state + " --- " + t.rate.to_s + "%",t.id]}] , :label => "Tax",:include_blank => false %></div>
 
-                <div class="span3"><%= i.input :sur_name, :label  => "name of  other charges ",:input_html => {:id => 'suggested'}%></div>
-                <div class="span3"><%= i.input :sur_tax, :label => "other charge rate ",:input_html => {:title => 'this is a lumpsum charge and is not percentage based'}%></div>
+                <div class="span3"><%= i.input :sur_name, :label  => "Name Other Charges (if any) ",:input_html => {:id => 'suggested'}%></div>
+                <div class="span3"><%= i.input :sur_tax, :label => "Other Charge Rate (if any) ",:input_html => {:title => 'this is a lumpsum charge and is not percentage based'}%></div>
                 <br/>
               </div>
             </div>
 
             <div class="span11">
               <div class="row">
-                <div class="span10">
-                  <%= i.input :gen_info, :label => "other information that should be printed with the bill",:input_html => {:rows => 2}%>
+                <div class="span10">b
+                  <%= i.input :gen_info, :label => "Other Information To Be Printed on The Bill",:input_html => {:rows => 2}%>
                 </div>
               </div>
             </div>
