@@ -10,7 +10,7 @@ class StaticPagesController < ApplicationController
       @customer = current_user.customers.build
       
       @micropost = current_user.microposts.build
-     
+      @micropost.bill_date = Date.today
       @del_items = @micropost.deliverables.find(:all)
       @product = current_user.products.build
       @deliverable = @micropost.deliverables.build

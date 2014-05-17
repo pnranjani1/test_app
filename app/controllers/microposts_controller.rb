@@ -235,9 +235,10 @@ class MicropostsController < ApplicationController
     begin
       browser = Watir::Browser.new
                                                                                         s
-      browser.goto  ""
+      browser.goto  "http://164.100.80.100/vat1/"
       browser.text_field(:id, "UserName").set(@micropost.user.esugam_id)
       browser.text_field(:id, "Password").set(@micropost.user.esugam_pwd)
+      browser.button(:value,"Continue").click
       browser.button(:value,"Login").click
       browser.goto "http://164.100.80.99/vat1/CheckInvoiceEnabled.aspx?Form=ESUGAM1"  
       if @tax.state == "CST"

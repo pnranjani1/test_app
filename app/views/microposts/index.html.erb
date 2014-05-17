@@ -1,10 +1,10 @@
-<aside class=" span5 pap">
+<aside class=" span5 pap_user">
 	<h1>Your previous bills</h1>
 	
     
 <%= render 'shared/feed'%>
 </aside>
-<div class=" span3 pap ">
+<div class=" span3 pap_user ">
 	<h3>Download all your bills</h3>
 	<i class="icon-download-alt"></i> <%= link_to 'Download CSV ', microposts_path( :format => :csv),:class => "btn"  %></br></br>
 	<i class="icon-download"></i> <%= link_to 'Download XLS ', microposts_path( :format => :xls),:class => "btn "  %>
