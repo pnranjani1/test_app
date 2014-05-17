@@ -21,7 +21,6 @@ html {
   margin: 20px 20px 20px 20px;
 }
 .nopper{
-  float:left;
   width:50%;
   padding: 20px 0;
 }
@@ -29,7 +28,7 @@ html {
   float:right;
   margin-left:10px;
   margin-right:10px;
-  margin-top:50px;
+  margin-top:-70px;
   
 }
 
@@ -60,7 +59,7 @@ body {
 .box
 {
   position: relative;
-  width: 700px;
+  width: 840px;
   padding: 50px;
   margin: 0 auto;
   background-color: #fff;
@@ -69,6 +68,14 @@ body {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
 }
 .pap{
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+
+.pap_user{
   padding: 50px;
   background-color: #fff;
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
@@ -76,9 +83,6 @@ body {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
 }
 
-section{
-  overflow: auto;
-}
 textarea{
   resize:vertical;
 }
@@ -199,7 +203,7 @@ aside{
 
 input, textarea, select, .uneditable-input{
   border: 1px solid #bbb;
-  padding: 10px;
+  padding: 7px;
   
   margin-bottom: 15px;
   color:$black;
@@ -295,7 +299,7 @@ label
 }
 ol{
   li{ list-style-type:none;}
- 
+
   
 }
 .label{
@@ -409,3 +413,31 @@ aside {
   background-repeat: no-repeat;
   background-position: 200px 280px;
 }
+
+
+
+/* custom modified */
+#carouselSection_invoice {
+  background-color: #F4F4F3;
+  border-bottom: 2px solid #CCCCCC;
+  min-height: 100px;
+}
+
+
+#carouselSection_tax {
+  background-color: #F4F4F3;
+  border-bottom: 2px solid #CCCCCC;
+  min-height: 200px;
+}
+
+
+#user_info {
+
+      background-image: url("/assets/arrowR.png");
+      background-position: 6px center;
+      background-repeat: no-repeat;
+      border-radius: 0;
+      padding-left: 16px;
+    }
+
+

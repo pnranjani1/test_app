@@ -1,6 +1,13 @@
 <div class="fields">
-  <%= f.input :product_id, :as => :select, :collection =>Hash[current_user.products.all.map{ |p| [p.name+ " -- " +p.description+ " -- " + p.code,p.id]}] ,:name => "items",:include_blank => false %>
-  <%= f.input :quantity  %>
-  <%= f.input :unit_price %>
-  <%= link_to_remove_fields "remove", f %>
+  <div class="row">
+    <div class="span3"><%= f.input :product_id,
+                                   :as => :select,
+                                   :collection =>Hash[current_user.products.all.map{ |p| [p.name+ " -- " +p.description+ " -- " + p.code,p.id]}] ,
+                                   :name => "items",
+                                   :include_blank => false %></div>
+    <div class="span3"><%= f.input :quantity  %></div>
+    <div class="span3"><%= f.input :unit_price %></div>
+    <div class="span1"><%= link_to_remove_fields "remove", f %></div>
+  </div>
+  <br/>
 </div>

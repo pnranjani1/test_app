@@ -24,7 +24,7 @@
 class Micropost < ActiveRecord::Base
   attr_accessible :content , :customer ,:customer_id,:category_id,:tax,:invoice_number,:state,:sur_name,:sur_tax,:gen_info,:bill_date,:esugam,:unedit
 
-  attr_accessible :deliverables_attributes
+  attr_accessible :deliverables_attributes, :infos_attributes
 
 
   
@@ -38,7 +38,7 @@ class Micropost < ActiveRecord::Base
   validates :customer_id,presence:true
   validates :user_id, presence: true
 
-  accepts_nested_attributes_for :deliverables
+  accepts_nested_attributes_for :deliverables,:infos,:allow_destroy => true
   
   default_scope order: 'microposts.created_at DESC'
   

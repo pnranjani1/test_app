@@ -17,5 +17,5 @@
 class Info < ActiveRecord::Base
   attr_accessible :sur_tax,:sur_name,:tax_id,:gen_info
   belongs_to :micropost
-  validates :tax_id,:micropost_id,presence:true
+  validates :tax_id,presence:true
 end

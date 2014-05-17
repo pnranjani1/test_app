@@ -1,33 +1,44 @@
 <% if @user.id == nil %>
-<% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+    <% provide(:title, 'Sign up') %>
+    <h1>Sign up</h1>
 <% else %>
-<% provide(:title, "Update user Details ")%>
-<h1> Update your profile </h1>
-<%= gravatar_for @user %>	
-		<a href="http://gravatar.com/emails" target ='_blank'>change</a>
+    <% provide(:title, "Update user Details ")%>
+    <h1> Update your profile </h1>
+    <%= gravatar_for @user %>
+    <a href="http://gravatar.com/emails" target ='_blank'>change</a>
 <% end %>
 <div class="row">
-	<div class="span6 offset3 pap">
-		<%=semantic_form_for @user do |f| %>
-			<%= render 'shared/error_messages', object: f.object %>
-		
-			<%= f.inputs :name,:email,:password,:password_confirmation %>
-			<%= f.input :esugam_id,:label => "Esugam user name"%>
-			<%= f.inputs :esugam_pwd,:tin,:address,:city,:phone,:bank_acc_no,:ifscode %>
-			<%= f.action :submit, :button_html => { :class => "btn " } %>
-			
-			
-		<% end %>
-			
-	</div>
-	
+  <div class="span7 offset2 pap_user">
+    <%=simple_form_for @user do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <%= f.input :name %>
+        <%= f.input :email%>
+        <%= f.input :password%>
+        <%= f.input :password_confirmation%>
+
+
+        <%= f.input :esugam_id,:label => "Esugam user name"%>
+        <%= f.input :esugam_pwd %>
+        <%= f.input :tin %>
+        <%= f.input :address %>
+        <%= f.input :city %>
+        <%= f.input :phone %>
+        <%= f.input :bank_acc_no %>
+        <%= f.input :ifscode %>
+        <%= f.submit "Create User",:class => "btn btn-primary"  %>
+
+
+    <% end %>
+
+  </div>
+
 </div>
 
 
 
-		
-		
-		
-		
-<p>Find me in app/views/users/new.html.erb</p>
+
+
+
+
+

@@ -9,19 +9,15 @@ class MicropostsController < ApplicationController
     end
 =end
 
-    micro = current_user.microposts.build
+    @micropost = current_user.microposts.build
     params[:micropost][:customer]= Customer.find(params[:micropost][:customer])
-    micro.update_attributes(params[:micropost])
 
 
 
-
-    @micropost = current_user.microposts.build(params[:micropost])
-    
      if Rails.cache.read("mp_id")!=nil
        update
      else
-       if @micropost.save
+       if @micropost.update_attributes(params[:micropost])
         if @micropost.bill_date == nil
           @micropost.update_column(:bill_date,Date.today)
         end
@@ -35,6 +31,7 @@ class MicropostsController < ApplicationController
         @bill = @micropost 
         Rails.cache.write("mp_id",@micropost.id)
         flash[:success] = "Micropost created ! with customer id" + @micropost.customer.id.to_s()
+        redirect_to micropost_path(Rails.cache.read('mp_id')) and return
         respond_to do |format|
           format.html {redirect_to root_url}
           format.js
