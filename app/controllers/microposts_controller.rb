@@ -233,7 +233,7 @@ class MicropostsController < ApplicationController
     @totax = @total +(@total * @tax.rate*0.01)
     @totax = @totax.round(2)
     begin
-      browser = Watir::Browser.new
+      browser = Watir::Browser.new :phantomjs
 
       browser.goto  "http://164.100.80.100/vat1/"
       browser.text_field(:id, "UserName").set(@micropost.user.esugam_id)
