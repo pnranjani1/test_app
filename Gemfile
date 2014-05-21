@@ -51,7 +51,7 @@ end
 
 group :production do
   gem 'pg'
-  gem 'thin'
+  gem 'unicorn'
 end
   #gem 'rails_12factor', '0.0.2'
   #gem 'unicorn'
