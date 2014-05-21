@@ -35,4 +35,4 @@ production:
   database: esugam_production
   pool: 5
   username: root
-  password: 
+  password:
