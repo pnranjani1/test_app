@@ -43,7 +43,7 @@ class UsersController < ApplicationController
         @customer = @user.customers.new(name:"Cash",tin:"00000000000",phone:"0000000",address:"",city:"bangalore",email:"cash@example.com")
         if @customer.save
           sign_in @user
-          flash[:success]="Welcome to onwebaccount.in !"
+          flash[:success]="Welcome to VatOnWheels !"
           redirect_to @user
         
         else

@@ -1,7 +1,7 @@
 module ApplicationHelper
   include Rails.application.routes.url_helpers
 def full_title(page_title)
-  base_title = "OnWebAccount.in"
+  base_title = "VatOnWheels"
   if page_title.empty?
     base_title
   else

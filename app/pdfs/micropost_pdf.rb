@@ -132,7 +132,7 @@ class MicropostPdf < Prawn::Document
     end
     move_down 40
     indent (100) do
-     text "This bill was created on OnWebAccount.In",size: 14  
+     text "This bill was created on VatOnWheels",size: 14
     end
     
     
