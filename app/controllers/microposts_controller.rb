@@ -235,12 +235,19 @@ class MicropostsController < ApplicationController
     begin
       browser = Watir::Browser.new :phantomjs
 
-      browser.goto  "http://164.100.80.99/vat1/"
+      browser.goto  "http://vat.kar.nic.in/"
+      url = nil
+      browser.windows.last.use do
+        url = browser.url
+      end
+      browser.goto url
+      browser.button(:value,"Continue").click rescue nil
+      browser.button(:value,"Conitnue").click rescue nil
       browser.text_field(:id, "UserName").set(@micropost.user.esugam_id)
       browser.text_field(:id, "Password").set(@micropost.user.esugam_pwd)
       browser.button(:value,"Login").click
-      browser.button(:value,"Continue").click
-      browser.goto "http://164.100.80.99/vat1/CheckInvoiceEnabled.aspx?Form=ESUGAM1"
+      browser.button(:value,"Continue").click rescue nil
+      browser.goto "#{url}/CheckInvoiceEnabled.aspx?Form=ESUGAM1"
       if @tax.state == "CST"
       browser.radio(:id, "ctl00_MasterContent_rdoStatCat_1").set
       sleep 5

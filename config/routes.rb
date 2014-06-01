@@ -1,4 +1,6 @@
 Onwebacc::Application.routes.draw do
+  get "report/show"
+
   get "taxes/new"
 
   get "infos/new"
