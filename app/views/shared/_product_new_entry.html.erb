@@ -2,7 +2,7 @@
 	
 	<%= f.semantic_errors :state %>
 	<%= f.inputs :name,:unit, :name => "product" %>
-	<%= f.input :description, :as=> :select, :collection => Hash[current_user.categories.all.map{|p| [p.name,p.name]}],:include_blank => false %>
+	<%= f.input :description, :label => "Commodity",:as=> :select, :collection => Hash[current_user.categories.all.map{|p| [p.name,p.name]}],:include_blank => false %>
 	
 	<%= f.action :submit, :button_html => {:class => "btn"} %>
 <% end %>
