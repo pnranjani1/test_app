@@ -11,9 +11,9 @@
 #
 
 class Category < ActiveRecord::Base
-  attr_accessible :name,:code
+  attr_accessible :name,:main_code, :sub_code
   belongs_to :user
   has_many :microposts, :through => :user
   validates :user_id, presence: true
-  validates :name,:code , presence: true
+  validates :name,:main_code , presence: true
 end

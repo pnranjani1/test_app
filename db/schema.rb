@@ -11,14 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130701143113) do
+ActiveRecord::Schema.define(:version => 20140603145458) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "code"
+    t.string   "main_code"
     t.integer  "user_id"
+    t.string   "sub_code"
   end
 
   create_table "categories_users", :id => false, :force => true do |t|
@@ -63,19 +64,19 @@ ActiveRecord::Schema.define(:version => 20130701143113) do
   end
 
   create_table "microposts", :force => true do |t|
-    t.text     "content",        :limit => 255
+    t.text     "content"
     t.integer  "user_id"
-    t.datetime "created_at",                                                                     :null => false
-    t.datetime "updated_at",                                                                     :null => false
+    t.datetime "created_at",                                                      :null => false
+    t.datetime "updated_at",                                                      :null => false
     t.integer  "customer_id"
     t.integer  "category_id"
-    t.boolean  "unedit",                                                      :default => false
-    t.decimal  "tax",                           :precision => 8, :scale => 2
+    t.boolean  "unedit",                                       :default => false
+    t.decimal  "tax",            :precision => 8, :scale => 2
     t.string   "state"
     t.string   "invoice_number"
-    t.decimal  "sur_tax",                       :precision => 8, :scale => 2
+    t.decimal  "sur_tax",        :precision => 8, :scale => 2
     t.string   "sur_name"
-    t.text     "gen_info",       :limit => 255
+    t.text     "gen_info"
     t.date     "bill_date"
     t.string   "esugam"
     t.integer  "info_id"
@@ -88,15 +89,15 @@ ActiveRecord::Schema.define(:version => 20130701143113) do
     t.string   "name"
     t.integer  "minimum_units"
     t.integer  "user_id"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
-    t.string   "unit",          :limit => 8
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "unit"
     t.string   "code"
   end
 
   create_table "taxes", :force => true do |t|
     t.string  "state"
-    t.decimal "rate"
+    t.decimal "rate",    :precision => 10, :scale => 0
     t.integer "user_id"
   end
 
