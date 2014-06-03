@@ -54,7 +54,7 @@ class MicropostPdf < Prawn::Document
     if @customer.email != "" 
     text "Email : "+@customer.email, size:12
     end 
-    if @customer.tin != "00000000000" 
+    if @customer.tin != "29000000000"
       text "TIN #" +@customer.tin,size:12
     end
     end

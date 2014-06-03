@@ -40,7 +40,7 @@ class UsersController < ApplicationController
       @user = User.new(params[:user])
       
       if @user.save
-        @customer = @user.customers.new(name:"Cash",tin:"00000000000",phone:"0000000",address:"",city:"bangalore",email:"cash@example.com")
+        @customer = @user.customers.new(name:"Cash",tin:"29000000000",phone:"0000000",address:"",city:"bangalore",email:"cash@example.com")
         if @customer.save
           sign_in @user
           flash[:success]="Welcome to VatOnWheels !"
