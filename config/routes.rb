@@ -16,7 +16,12 @@ Onwebacc::Application.routes.draw do
   resources :customers
   resources :categories 
   resources :deliverables
-  resources :products
+  get "products/upload"
+  resources :products  do
+    collection { post :import }
+  end
+
+
   
   
   root to: 'static_pages#home'

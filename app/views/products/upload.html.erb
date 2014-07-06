@@ -1,0 +1,28 @@
+<div class="panel panel-success" style="margin-left: 106px; margin-right: 152px">
+<div class="row">
+  <div class= "span6 offset2">
+    <%= form_tag import_products_path, multipart: true do %>
+        <div class="panel-heading">
+          <h3 class="panel-title">Import Products from Excel file</h3>
+
+        </div>
+        <br>
+        <%= file_field_tag :file %>
+        <br>
+        <%= submit_tag "Import" , class: "btn btn-info" %>
+    <% end %>
+</div>
+</div>
+    </div>
+
+<style>
+    .panel-success {
+        color: rgba(0, 0, 0, 0.81);
+        background-color: #FFFFFF;
+        border-color: #d6e9c6;
+    }
+    .panel-heading > .table, .panel-heading > .table th {
+        margin:0px;
+        border: 0px;
+    }
+</style>

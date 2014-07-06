@@ -50,10 +50,28 @@ class ProductsController < ApplicationController
     
   
   end
+
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
     redirect_to products_path
+  end
+
+  def upload
+
+  end
+
+  def import
+    file = params[:file]
+    file_name = file.original_filename.split(".").first
+    extension =  File.extname(file.original_filename)
+    tmp_file = Tempfile.new([ file_name, extension ])
+    tmp_file.binmode
+    tmp_file.write(file.read)
+    tmp_file.rewind
+    Product.import(tmp_file,current_user.id)
+    flash[:notice] = "Successfully imported"
+    redirect_to root_url
   end
     
   
