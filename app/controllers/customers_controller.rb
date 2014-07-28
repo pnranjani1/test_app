@@ -72,6 +72,23 @@ class CustomersController < ApplicationController
     @customer=current_user.customers.find_by_id(params[:id])
     
   end
+
+  def upload
+
+  end
+
+  def import
+    file = params[:file]
+    file_name = file.original_filename.split(".").first
+    extension =  File.extname(file.original_filename)
+    tmp_file = Tempfile.new([ file_name, extension ])
+    tmp_file.binmode
+    tmp_file.write(file.read)
+    tmp_file.rewind
+    Customer.import(tmp_file,current_user.id)
+    flash[:notice] = "Successfully imported"
+    redirect_to root_url
+  end
   
   private
     def correct_user

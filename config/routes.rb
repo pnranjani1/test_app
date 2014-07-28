@@ -14,11 +14,15 @@ Onwebacc::Application.routes.draw do
   match 'microposts/interstate_sales', to: 'microposts#interstate_sales', as: :interstate_sales
   resources :microposts, only: [:show, :create, :destroy,:index]
   resources :infos  
-  resources :taxes 
-  resources :customers
+  resources :taxes
+  get "customers/upload"
+  resources :customers do
+    collection {post :import}
+  end
   resources :categories 
   resources :deliverables
   get "products/upload"
+
   resources :products  do
     collection { post :import }
   end
