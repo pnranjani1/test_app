@@ -2,6 +2,8 @@ class ProductsController < ApplicationController
   
   def create
     @product = current_user.products.build(params[:product])
+    category = Category.where(name: @product.description).first
+    @product.category_id = category.id if category
     if @product.code == nil
       @product.code = ""
     end

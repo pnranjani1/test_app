@@ -14,8 +14,9 @@
 #
 
 class Product < ActiveRecord::Base
-  attr_accessible :description, :minimum_units, :name,:code,:unit
+  attr_accessible :description, :minimum_units, :name,:code,:unit, :category_id
   belongs_to :user
+  belongs_to :category
   validates :description,  :name,:unit, presence:true
 
   def self.import(file,user_id)

@@ -10,6 +10,8 @@ Onwebacc::Application.routes.draw do
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  match 'microposts/local_sales', to: 'microposts#local_sales', as: :local_sales
+  match 'microposts/interstate_sales', to: 'microposts#interstate_sales', as: :interstate_sales
   resources :microposts, only: [:show, :create, :destroy,:index]
   resources :infos  
   resources :taxes 

@@ -1,3 +1,5 @@
+require 'local_sales'
+require 'inter_state_sales'
 class MicropostsController < ApplicationController
   before_filter :signed_in_user, only: [:create, :destroy, :show]
   before_filter :correct_user, only: [ :destroy , :show]
@@ -57,6 +59,24 @@ class MicropostsController < ApplicationController
 
 
   end
+
+  def local_sales
+    xml = LocalSales.new(current_user.id).generate_xml
+    send_data xml,
+              :filename =>  "Local_sales_"+Date.today.strftime("%m")+".xml",
+              :type => "text/xml; charset=UTF-8",
+              :disposition => "attachment"
+    end
+
+  def interstate_sales
+    xml = InterStateSales.new(current_user.id).generate_xml
+    send_data xml,
+              :filename =>  "Interstate_sales_"+Date.today.strftime("%m")+".xml",
+              :type => "text/xml; charset=UTF-8",
+              :disposition => "attachment"
+  end
+
+
   def show
 
     @bill = @micropost
