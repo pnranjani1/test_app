@@ -15,9 +15,21 @@
 	<%= submit_tag("Tally importable xml",:class => "btn")%>
 
 	<% end %>
-    <%= link_to "Generate Local Sales", local_sales_path, class: 'btn' %>
+  <br/>
+  <br/>
+  <%= form_tag local_sales_path,method: 'get' do %>
+      <%= text_field_tag "Month",nil,class: 'monthpicker' %>
+      <%= submit_tag "Generate Local Sales XML", class: 'btn' %>
+  <% end %>
     <br/>
     <br/>
-
-    <%= link_to "Generate InterState Sales", interstate_sales_path, class: 'btn' %>
+  <%= form_tag interstate_sales_path,method: 'get' do %>
+      <%= text_field_tag "Month",nil,class: 'monthpicker' %>
+      <%= submit_tag "Generate InterState Sales XML", class: 'btn' %>
+  <% end %>
 </div>
+
+
+<script>
+    $('.monthpicker').monthpicker();
+</script>

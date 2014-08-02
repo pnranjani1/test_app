@@ -61,7 +61,8 @@ class MicropostsController < ApplicationController
   end
 
   def local_sales
-    xml = LocalSales.new(current_user.id).generate_xml
+    month = params['Month'][0..1]
+    xml = LocalSales.new(current_user.id,month).generate_xml
     send_data xml,
               :filename =>  "Local_sales_"+Date.today.strftime("%m")+".xml",
               :type => "text/xml; charset=UTF-8",
@@ -69,7 +70,8 @@ class MicropostsController < ApplicationController
     end
 
   def interstate_sales
-    xml = InterStateSales.new(current_user.id).generate_xml
+    month = params['Month'][0..1]
+    xml = InterStateSales.new(current_user.id,month).generate_xml
     send_data xml,
               :filename =>  "Interstate_sales_"+Date.today.strftime("%m")+".xml",
               :type => "text/xml; charset=UTF-8",
