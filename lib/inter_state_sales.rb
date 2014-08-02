@@ -3,7 +3,8 @@ class InterStateSales
   def initialize(user_id)
     @xml = ""
     @user = User.where(id: user_id).first
-    @microposts = @user.microposts.where("MONTH(created_at) = ?",Date.today.strftime("%m"))
+    d = Date.today
+    @microposts = @user.microposts.where("created_at >= ? and created_at <= ?",d.at_beginning_of_month,d.at_end_of_month)
   end
 
   def generate_xml
