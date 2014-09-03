@@ -255,7 +255,7 @@ class MicropostsController < ApplicationController
     @totax = @total +(@total * @tax.rate*0.01)
     @totax = @totax.round(2)
     begin
-      browser = Watir::Browser.new
+      browser = Watir::Browser.new :phantomjs
 
       browser.goto  "http://vat.kar.nic.in/"
       url = nil
