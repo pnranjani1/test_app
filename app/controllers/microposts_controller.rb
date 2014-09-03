@@ -328,7 +328,7 @@ class MicropostsController < ApplicationController
       end
       return esugam
     rescue => e
-      browser.close
+      browser.close if browser
       logger.error " esugam not beiong generetaed " + e.to_s
       esugam = nil
       flash.now[:error] = "There has been an error in generating the esugam,try again later , if the error does not go away check the esugam username and password , if everything is ok and a number is still not generated , contact the webmaster" +e.to_s
