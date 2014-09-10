@@ -303,7 +303,10 @@ class MicropostsController < ApplicationController
       browser.text_field(:id, "ctl00_MasterContent_txt_commodityname").set(@product.description)
       browser.select_list(:id, "ctl00_MasterContent_ddl_commoditycode").select(@product.description)
       browser.text_field(:id, "ctl00_MasterContent_txtQuantity").set(@stringer)
+      browser.send_keys :tab
       browser.text_field(:id, "ctl00_MasterContent_txtNetValue").set(@total)
+      browser.send_keys :enter
+      browser.send_keys :tab
       browser.text_field(:id, "ctl00_MasterContent_txtVatTaxValue").set(@taxer)
       browser.text_field(:id, "ctl00_MasterContent_txtOthVal").set(@sur)
       sleep 3
