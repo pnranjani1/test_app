@@ -1,0 +1,17 @@
+,class: "btn btn-default fileupload-exists"
+
+ <script>
+   $(function() {
+    $("#local_sales").monthpicker();
+    $("#interstate_sales").monthpicker();
+     });
+  </script>
+
+
+
+<script type="text/javascript">
+        $(function () {
+            $("#start_date").datepicker({ dateFormat: "dd/mm/yy" }).val()
+            $("#end_date").datepicker({ dateFormat: "dd/mm/yy" }).val()
+        });
+</script>
